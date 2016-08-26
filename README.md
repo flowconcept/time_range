@@ -1,2 +1,2 @@
-# time_range
-Provides a time range field with timepicker
+# Description
+Provides a time range field with timepicker.

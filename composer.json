@@ -1,0 +1,9 @@
+{
+  "name": "flowconcept/time_range",
+  "description": "Provides a time range field with timepicker",
+  "version": "master",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": { }
+}
