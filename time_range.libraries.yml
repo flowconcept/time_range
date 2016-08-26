@@ -1,0 +1,21 @@
+timepicker:
+  version: 1.11.1
+  js:
+    /bower_components/jt.timepicker/jquery.timepicker.min.js: {}
+  css:
+    theme:
+      /bower_components/jt.timepicker/jquery.timepicker.css: {}
+  dependencies:
+    - core/jquery
+
+drupal.time_range.timepicker:
+  version: VERSION
+  js:
+    js/time_range.timepicker.js: {}
+  css:
+    theme:
+      css/time_range.timepicker.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - time_range/timepicker
