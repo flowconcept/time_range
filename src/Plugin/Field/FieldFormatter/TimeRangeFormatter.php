@@ -31,19 +31,12 @@ class TimeRangeFormatter extends FormatterBase {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      // The text value has no text format assigned to it, so the user input
-      // should equal the output, including newlines.
-      $elements[$delta]['start'] = [
-        '#type' => 'inline_template',
-        '#template' => '{{ value|nl2br }}',
-        '#context' => ['value' => $item->start],
+      $elements[$delta] = [
+        '#markup' => $this->t('@start to @end', [
+          '@start' => $item->start,
+          '@end' => $item->end,
+        ]),
       ];
-      $elements[$delta]['end'] = [
-        '#type' => 'inline_template',
-        '#template' => '{{ value|nl2br }}',
-        '#context' => ['value' => $item->end],
-      ];
-
     }
 
     return $elements;
