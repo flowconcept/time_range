@@ -31,12 +31,23 @@ class TimeRangeFormatter extends FormatterBase {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      $elements[$delta] = [
-        '#markup' => $this->t('@start to @end', [
-          '@start' => $item->start,
-          '@end' => $item->end,
-        ]),
-      ];
+
+      if (!empty($item->end)) {
+        $elements[$delta] = [
+          '#markup' => $this->t('@start to @end', [
+            '@start' => ltrim($item->start, "0"),
+            '@end' => ltrim($item->end, "0"),
+          ]),
+        ];
+      }
+      else {
+        $elements[$delta] = [
+          '#markup' => $this->t('@start', [
+            '@start' => ltrim($item->start, "0"),
+          ]),
+        ];
+      }
+
     }
 
     return $elements;
